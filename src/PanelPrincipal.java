@@ -100,14 +100,47 @@ public class PanelPrincipal extends JPanel {
 
         JButton btnEj6 = new JButton("ej6");
         btnEj6.setBounds(745, 292, 200, 120);
+        btnEj6.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                PanelEj6 panel6 = new PanelEj6();
+                JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(PanelPrincipal.this);
+                frame.getContentPane().remove(PanelPrincipal.this);
+                frame.getContentPane().add(panel6);
+                panel6.setVisible(true);
+                frame.revalidate();
+                frame.repaint();
+            }
+        });
         add(btnEj6);
 
         JButton btnEj7 = new JButton("ej7");
         btnEj7.setBounds(215, 491, 200, 120);
+        btnEj7.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                PanelEj7 panel7 = new PanelEj7();
+                JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(PanelPrincipal.this);
+                frame.getContentPane().remove(PanelPrincipal.this);
+                frame.getContentPane().add(panel7);
+                panel7.setVisible(true);
+                frame.revalidate();
+                frame.repaint();
+            }
+        });
         add(btnEj7);
 
         JButton btnEj8 = new JButton("ej8");
         btnEj8.setBounds(571, 491, 200, 120);
+        btnEj8.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                PanelEj8 panel8 = new PanelEj8();
+                JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(PanelPrincipal.this);
+                frame.getContentPane().remove(PanelPrincipal.this);
+                frame.getContentPane().add(panel8);
+                panel8.setVisible(true);
+                frame.revalidate();
+                frame.repaint();
+            }
+        });
         add(btnEj8);
 
     }
