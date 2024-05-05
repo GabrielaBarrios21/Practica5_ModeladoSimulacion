@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="39c14e4d-2043-4adf-9f9d-2e7bde751636" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PanelEj2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PanelEj2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PanelEj3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PanelEj3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,17 +33,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "gaby",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Docs UCB/SIS-224 Modelado, Dinámica de Sistemas y SImulación/GeneracionNumerosAleatorios",
-    "onboarding.tips.debug.path": "D:/Docs UCB/SIS-224 Modelado, Dinámica de Sistemas y SImulación/Practica5_ModeladoSimulacion/src/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;gaby&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Docs UCB/SIS-224 Modelado, Dinámica de Sistemas y SImulación/GeneracionNumerosAleatorios&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;D:/Docs UCB/SIS-224 Modelado, Dinámica de Sistemas y SImulación/Practica5_ModeladoSimulacion/src/Main.java&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
