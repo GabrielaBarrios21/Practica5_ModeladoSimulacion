@@ -352,7 +352,7 @@ public class PanelEj6 extends JPanel {
                                         vac = 0;
                                     } else if(r_vac>prob0 && r_vac<=(prob0 + prob1) ){
                                         vac = 1;
-                                    } else if(r_vac>(prob0 + prob1) && r_vac <= (prob0 + prob1 + prob3)){
+                                    } else if(r_vac>(prob0 + prob1) && r_vac <= (prob0 + prob1 + prob2)){
                                         vac = 2;
                                     } else {
                                         vac = 3;
