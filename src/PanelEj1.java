@@ -222,6 +222,5 @@ public class PanelEj1 extends JPanel {
                 tfK_final.setText("");
             }
         });
-        add(btnLimpiar);
     }
 }
