@@ -22,6 +22,7 @@ public class PanelEj3 extends JPanel {
     private JTextField tfPromedioX1;
     private JTextField tfPromedioX2;
     private JTextField tfPromedioX3;
+    private JTable table; // Agregar la variable para la tabla
 
     /**
      * Create the panel.
@@ -65,6 +66,16 @@ public class PanelEj3 extends JPanel {
         JScrollPane spResultadosSimulaciones = new JScrollPane();
         spResultadosSimulaciones.setBounds(455, 150, 515, 256);
         add(spResultadosSimulaciones);
+
+        // Crear la tabla inicial con los encabezados
+        String[] columnNames = {"Z", "X1", "X2", "X3"};
+        Object[][] data = {}; // No hay datos inicialmente
+        table = new JTable(data, columnNames);
+        table.setPreferredScrollableViewportSize(new Dimension(515, 256));
+        table.setFillsViewportHeight(true);
+
+        // Establecer la tabla como la vista del JScrollPane
+        spResultadosSimulaciones.setViewportView(table);
 
         JLabel lblParametros = new JLabel("Parametros de la Simulacion");
         lblParametros.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -176,37 +187,65 @@ public class PanelEj3 extends JPanel {
         add(lblPromedioZ);
 
         JLabel lblPromedioX1 = new JLabel("Variable de decisión 1 (X1):");
-        lblPromedioX1.setBounds(455, 523, 146, 14);
+        lblPromedioX1.setBounds(455, 523, 170, 14);
         add(lblPromedioX1);
 
         JLabel lblPromedioX2 = new JLabel("Variable de decisión 2 (X2):");
-        lblPromedioX2.setBounds(455, 559, 146, 14);
+        lblPromedioX2.setBounds(455, 559, 170, 14);
         add(lblPromedioX2);
 
         JLabel lblPromedioX3 = new JLabel("Variable de decisión 3 (X3):");
-        lblPromedioX3.setBounds(455, 599, 146, 14);
+        lblPromedioX3.setBounds(455, 599, 170, 14);
         add(lblPromedioX3);
 
         tfPromedioZ = new JTextField();
-        tfPromedioZ.setBounds(602, 482, 86, 20);
+        tfPromedioZ.setBounds(635, 482, 132, 20);
         add(tfPromedioZ);
         tfPromedioZ.setColumns(10);
 
         tfPromedioX1 = new JTextField();
         tfPromedioX1.setColumns(10);
-        tfPromedioX1.setBounds(602, 520, 86, 20);
+        tfPromedioX1.setBounds(635, 520, 132, 20);
         add(tfPromedioX1);
 
         tfPromedioX2 = new JTextField();
         tfPromedioX2.setColumns(10);
-        tfPromedioX2.setBounds(602, 556, 86, 20);
+        tfPromedioX2.setBounds(635, 556, 132, 20);
         add(tfPromedioX2);
 
         tfPromedioX3 = new JTextField();
         tfPromedioX3.setColumns(10);
-        tfPromedioX3.setBounds(602, 596, 86, 20);
+        tfPromedioX3.setBounds(635, 596, 132, 20);
         add(tfPromedioX3);
 
+        // Eventos para botones
+        btnSimular.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Aquí va el código para simular
+                System.out.println("Simulando...");
+            }
+        });
+
+        btnLimpiar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Limpiar campos de texto
+                numSim.setText("");
+                tfNMI.setText("");
+                tfX1.setText("");
+                tfX2.setText("");
+                tfX3.setText("");
+                tfX1X2.setText("");
+                tfMenorX1.setText("");
+                tfMayorX1.setText("");
+                tfMenorX2.setText("");
+                tfMayorX2.setText("");
+                tfMenorX3.setText("");
+                tfMayorX3.setText("");
+                tfPromedioZ.setText("");
+                tfPromedioX1.setText("");
+                tfPromedioX2.setText("");
+                tfPromedioX3.setText("");
+            }
+        });
     }
 }
-
