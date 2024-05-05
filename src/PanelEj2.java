@@ -158,10 +158,18 @@ public class PanelEj2 extends JPanel {
                     JOptionPane.showMessageDialog(null, "Debe llenar todos los campos", "Error", JOptionPane.ERROR_MESSAGE);
                 } else if (!tiempo.matches("[-0-9.,]+") || !tasaNatalidad.matches("[-0-9.,]+") || !tasaMortandad.matches("[-0-9.,]+") || !poblacion.matches("[-0-9.,]+")) {
                     JOptionPane.showMessageDialog(null, "Error en los datos ingresados", "Error", JOptionPane.ERROR_MESSAGE);
-                } else if (Double.parseDouble(tiempo) <= 0 || Double.parseDouble(tasaNatalidad) <= 0 || Double.parseDouble(tasaMortandad) <= 0 || Double.parseDouble(poblacion) <= 0) {
-                    JOptionPane.showMessageDialog(null, "Los valores deben ser mayores a cero", "Error", JOptionPane.ERROR_MESSAGE);
-                } else if (!tiempo.matches("\\d+") || !poblacion.matches("\\d+")) {
-                    JOptionPane.showMessageDialog(null, "Los valores deben ser enteros", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if (Double.parseDouble(tiempo) <= 0) {
+                    JOptionPane.showMessageDialog(null, "El año debe ser mayor a cero", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if (!tiempo.matches("\\d+")) {
+                    JOptionPane.showMessageDialog(null, "El año debe ser entero", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if (Double.parseDouble(tasaNatalidad) <= 0) {
+                    JOptionPane.showMessageDialog(null, "La tasa de natalidad debe ser mayor a cero", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if (Double.parseDouble(tasaMortandad) <= 0) {
+                    JOptionPane.showMessageDialog(null, "La tasa de mortandad debe ser mayor a cero", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if (Double.parseDouble(poblacion) <= 0) {
+                    JOptionPane.showMessageDialog(null, "La población debe ser mayor a cero", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if (!poblacion.matches("\\d+")) {
+                    JOptionPane.showMessageDialog(null, "La población debe ser entera", "Error", JOptionPane.ERROR_MESSAGE);
                 } else if (Double.parseDouble(tiempo) <= 2012) {
                     JOptionPane.showMessageDialog(null, "El año debe ser mayor al 2012", "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
