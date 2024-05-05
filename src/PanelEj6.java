@@ -52,7 +52,7 @@ public class PanelEj6 extends JPanel {
         add(btnAtras);
 
         JLabel lblSimulaciones = new JLabel("Número de simulaciones:");
-        lblSimulaciones.setBounds(24, 86, 134, 37);
+        lblSimulaciones.setBounds(24, 86, 150, 37);
         add(lblSimulaciones);
 
         numSim = new JTextField();
@@ -248,8 +248,138 @@ public class PanelEj6 extends JPanel {
 
         btnSimular.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // Aquí va la lógica para simular
-                // Puedes implementarla de manera similar a como lo hiciste en el otro panel
+                String numeroSimulaciones = numSim.getText();
+                String numeroHoras = tfNMH.getText();
+                String costoFijo = tfCF.getText();
+                String costoArticulo = tfCUA.getText();
+                String precioVenta = tfPVU.getText();
+                String minimoCliente = tfMinCli.getText();
+                String maximoCliente = tfMaxCli.getText();
+                String probCli0 = tf0.getText();
+                String probCli1 = tf1.getText();
+                String probCli2 = tf2.getText();
+                String probCli3 = tf3.getText();
+
+                // Reemplazar comas por puntos para manejar números decimales correctamente
+                numeroSimulaciones = numeroSimulaciones.replace(',', '.');
+                numeroHoras = numeroHoras.replace(',', '.');
+                costoFijo = costoFijo.replace(',', '.');
+                costoArticulo = costoArticulo.replace(',', '.');
+                precioVenta = precioVenta.replace(',', '.');
+                minimoCliente = minimoCliente.replace(',', '.');
+                maximoCliente = maximoCliente.replace(',', '.');
+                probCli0 = probCli0.replace(',', '.');
+                probCli1 = probCli1.replace(',', '.');
+                probCli2 = probCli2.replace(',', '.');
+                probCli3 = probCli3.replace(',', '.');
+
+                // Realizar las validaciones
+                if (numeroSimulaciones.isEmpty() || numeroHoras.isEmpty() || costoFijo.isEmpty() || costoArticulo.isEmpty() || precioVenta.isEmpty() || minimoCliente.isEmpty() || maximoCliente.isEmpty() ||
+                        probCli0.isEmpty() || probCli1.isEmpty() || probCli2.isEmpty() || probCli3.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Debe llenar todos los campos", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if (!numeroSimulaciones.matches("[-0-9.,]+") || !numeroHoras.matches("[-0-9.,]+") || !costoFijo.matches("[-0-9.,]+") || !costoArticulo.matches("[-0-9.,]+") || !precioVenta.matches("[-0-9.,]+") ||
+                        !minimoCliente.matches("[-0-9.,]+") || !maximoCliente.matches("[-0-9.,]+") || !probCli0.matches("[-0-9.,]+") || !probCli1.matches("[-0-9.,]+") || !probCli2.matches("[-0-9.,]+") || !probCli3.matches("[-0-9.,]+")) {
+                    JOptionPane.showMessageDialog(null, "Error en los datos ingresados", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if (Double.parseDouble(numeroSimulaciones) <= 0) {
+                    JOptionPane.showMessageDialog(null, "El número de simulaciones debe ser mayor a cero", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if (!numeroSimulaciones.matches("\\d+")) {
+                    JOptionPane.showMessageDialog(null, "El número de simulaciones debe ser entero", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if (Double.parseDouble(numeroHoras) <= 0) {
+                    JOptionPane.showMessageDialog(null, "El número máximo de horas debe ser mayor a cero", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if (!numeroHoras.matches("\\d+")) {
+                    JOptionPane.showMessageDialog(null, "El número máximo de horas debe ser entero", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if (Double.parseDouble(costoFijo) <= 0) {
+                    JOptionPane.showMessageDialog(null, "El costo fijo debe ser mayor a cero", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if (Double.parseDouble(costoArticulo) <= 0) {
+                    JOptionPane.showMessageDialog(null, "El costo unitario por artículo debe ser mayor a cero", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if (Double.parseDouble(precioVenta) <= 0) {
+                    JOptionPane.showMessageDialog(null, "El precio de venta del artículo debe ser mayor a cero", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if (Double.parseDouble(minimoCliente) < 0) {
+                    JOptionPane.showMessageDialog(null, "El mínimo de clientes por hora debe ser mayor o igual a cero", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if (!minimoCliente.matches("\\d+")) {
+                    JOptionPane.showMessageDialog(null, "El mínimo de clientes por hora debe ser entero", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if (Double.parseDouble(maximoCliente) < 0) {
+                    JOptionPane.showMessageDialog(null, "El máximo de clientes por hora debe ser mayor o igual a cero", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if (!maximoCliente.matches("\\d+")) {
+                    JOptionPane.showMessageDialog(null, "El máximo de clientes por hora debe ser entero", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if (Double.parseDouble(probCli0) < 0 || Double.parseDouble(probCli0) > 1 || Double.parseDouble(probCli1) < 0 || Double.parseDouble(probCli1) > 1 ||
+                        Double.parseDouble(probCli2) < 0 || Double.parseDouble(probCli2) > 1 || Double.parseDouble(probCli3) < 0 || Double.parseDouble(probCli3) > 1) {
+                    JOptionPane.showMessageDialog(null, "Las probabilidades deben estar entre 0 y 1", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if(Double.parseDouble(probCli0) + Double.parseDouble(probCli1) + Double.parseDouble(probCli2) + Double.parseDouble(probCli3) != 1){
+                    JOptionPane.showMessageDialog(null, "Las probabilidades deben sumar 1", "Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    long numSim = Long.parseLong(numeroSimulaciones);
+                    long NMH = Long.parseLong(numeroHoras);
+                    double CF = Double.parseDouble(costoFijo);
+                    double CUA = Double.parseDouble(costoArticulo);
+                    double PVU = Double.parseDouble(precioVenta);
+                    double minCli = Double.parseDouble(minimoCliente);
+                    double maxCli = Double.parseDouble(maximoCliente);
+                    double prob0 = Double.parseDouble(probCli0);
+                    double prob1 = Double.parseDouble(probCli1);
+                    double prob2 = Double.parseDouble(probCli2);
+                    double prob3 = Double.parseDouble(probCli3);
+
+                    long NSIM = 0;
+                    double suma_TAV = 0;
+                    double suma_GN = 0;
+
+                    // Limpiar contenido previo del JScrollPane
+                    String[] columnNames = {"NSIM", "TAV", "GN"};
+                    Object[][] data = new Object[(int) numSim][3];
+
+                    // Realizar la simulación y llenar los datos
+                    do {
+                        NSIM += 1;
+                        long CH = 0;
+                        long TAV = 0;
+                        double GN = 0;
+
+                        long llecli;
+                        double r_llecli;
+                        long vac;
+                        double r_vac;
+
+                        do {
+                            CH += 1;
+                            r_llecli = Math.random();
+                            llecli = Math.round(minCli + (maxCli-minCli) *r_llecli);
+                            if (llecli != 0){
+                                do{
+                                    llecli -= 1;
+                                    r_vac = Math.random();
+                                    if(r_vac>0 && r_vac <= prob0){
+                                        vac = 0;
+                                    } else if(r_vac>prob0 && r_vac<=(prob0 + prob1) ){
+                                        vac = 1;
+                                    } else if(r_vac>(prob0 + prob1) && r_vac <= (prob0 + prob1 + prob3)){
+                                        vac = 2;
+                                    } else {
+                                        vac = 3;
+                                    }
+                                    TAV += vac;
+                                } while(llecli > 0);
+                            }
+                        } while(CH < NMH);
+                        GN = TAV*(PVU-CUA) - CF;
+                        data[(int) (NSIM-1)] = new Object[]{NSIM, TAV, GN};
+                        suma_GN += GN;
+                        suma_TAV += TAV;
+
+                    } while (NSIM < numSim);
+
+                    // Crear la tabla con los datos y los encabezados
+                    table = new JTable(data, columnNames);
+                    table.setPreferredScrollableViewportSize(new Dimension(515, 256));
+                    table.setFillsViewportHeight(true);
+
+                    // Agregar la tabla al JScrollPane
+                    spResultadosSimulaciones.setViewportView(table);
+
+                    // Mostrar Promedios
+                    tfTAV_promedio.setText(String.valueOf(suma_TAV / numSim));
+                    tfGN_promedio.setText(String.valueOf(suma_GN / numSim));
+                }
             }
         });
 
