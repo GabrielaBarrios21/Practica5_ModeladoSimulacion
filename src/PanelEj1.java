@@ -151,26 +151,26 @@ public class PanelEj1 extends JPanel {
                 if (tiempo.isEmpty() || interes.isEmpty() || capital.isEmpty() || decimales.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Debe llenar todos los campos", "Error", JOptionPane.ERROR_MESSAGE);
                 } else if (!tiempo.matches("[-0-9.,]+") || !interes.matches("[-0-9.,]+") || !capital.matches("[-0-9.,]+" ) || !decimales.matches("[-0-9.,]+")) {
-                    JOptionPane.showMessageDialog(null, "Datos ingresados incorrectos, debe ingresar números", "Error", JOptionPane.ERROR_MESSAGE);
-                } else if (Integer.parseInt(tiempo) <= 0) {
+                    JOptionPane.showMessageDialog(null, "Error en los datos ingresados", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if (Double.parseDouble(tiempo) <= 0) {
                     JOptionPane.showMessageDialog(null, "El tiempo de depósito a plazo fijo (T) debe ser mayor a cero", "Error", JOptionPane.ERROR_MESSAGE);
+                } else  if (!tiempo.matches("\\d+")) {
+                    JOptionPane.showMessageDialog(null, "El tiempo de depósito a plazo fijo debe ser entero", "Error", JOptionPane.ERROR_MESSAGE);
                 } else if (Double.parseDouble(interes) <= 0) {
                     JOptionPane.showMessageDialog(null, "La tasa de interés (i) debe ser mayor a cero", "Error", JOptionPane.ERROR_MESSAGE);
                 } else if (Double.parseDouble(capital) <= 0) {
                     JOptionPane.showMessageDialog(null, "El capital inicial (K) debe ser mayor a cero", "Error", JOptionPane.ERROR_MESSAGE);
-                } else if (Integer.parseInt(decimales) <= 0) {
+                } else if (Double.parseDouble(decimales) <= 0) {
                     JOptionPane.showMessageDialog(null, "La cantidad de decimales debe ser mayor a cero", "Error", JOptionPane.ERROR_MESSAGE);
-                } else if (!tiempo.matches("\\d+")) {
-                    JOptionPane.showMessageDialog(null, "El tiempo de depósito a plazo fijo debe ser entero", "Error", JOptionPane.ERROR_MESSAGE);
                 } else if (!decimales.matches("\\d+")) {
                     JOptionPane.showMessageDialog(null, "La cantidad de decimales debe ser entera", "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
-                    long T = Integer.parseInt(tiempo);
+                    double T = Double.parseDouble(tiempo);
                     long CT = 0;
                     double I; // I = K*i
                     double K = Double.parseDouble(capital);
                     double i = Double.parseDouble(interes) / 100;
-                    long dec = Integer.parseInt(decimales);
+                    long dec = Long.parseLong(decimales);
 
                     // Limpiar contenido previo del JScrollPane
                     String[] columnNames = {"CT", "I", "K"};
@@ -222,6 +222,5 @@ public class PanelEj1 extends JPanel {
                 tfK_final.setText("");
             }
         });
-        add(btnLimpiar);
     }
 }
