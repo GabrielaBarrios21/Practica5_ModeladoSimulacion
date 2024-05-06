@@ -28,9 +28,10 @@ public class PanelEj3 extends JPanel {
      * Create the panel.
      */
     public PanelEj3() {
+        setBackground(new Color(204, 255, 255));
         setLayout(null);
         JLabel lblTitulo = new JLabel("Maximizar Z");
-        lblTitulo.setBounds(0, 0, 1000, 31);
+        lblTitulo.setBounds(0, 0, 1000, 46);
         lblTitulo.setFont(new Font("Dialog", Font.BOLD, 20));
         lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitulo.setForeground(Color.BLACK);
@@ -40,7 +41,7 @@ public class PanelEj3 extends JPanel {
         setSize(990, 670);
 
         JButton btnAtras = new JButton("<<Atrás");
-        btnAtras.setBounds(10, 25, 89, 23);
+        btnAtras.setBounds(10, 25, 89, 40);
         btnAtras.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 PanelPrincipal panerlprincipal = new PanelPrincipal();
@@ -55,11 +56,13 @@ public class PanelEj3 extends JPanel {
         add(btnAtras);
 
         JLabel lblSimulaciones = new JLabel("Número de simulaciones:");
-        lblSimulaciones.setBounds(24, 127, 174, 37);
+        lblSimulaciones.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblSimulaciones.setBounds(24, 116, 174, 40);
         add(lblSimulaciones);
 
         numSim = new JTextField();
-        numSim.setBounds(208, 130, 134, 31);
+        numSim.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        numSim.setBounds(208, 117, 183, 40);
         add(numSim);
         numSim.setColumns(10);
 
@@ -78,95 +81,117 @@ public class PanelEj3 extends JPanel {
         spResultadosSimulaciones.setViewportView(table);
 
         JLabel lblParametros = new JLabel("Parámetros de la Simulación");
-        lblParametros.setFont(new Font("Tahoma", Font.BOLD, 11));
-        lblParametros.setBounds(24, 184, 190, 14);
+        lblParametros.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblParametros.setBounds(24, 184, 259, 30);
         add(lblParametros);
 
         JLabel lblNumMaxIt = new JLabel("Número máximo de iteraciones (NMI):");
-        lblNumMaxIt.setBounds(24, 209, 223, 31);
+        lblNumMaxIt.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblNumMaxIt.setBounds(24, 209, 367, 31);
         add(lblNumMaxIt);
 
         tfNMI = new JTextField();
+        tfNMI.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfNMI.setColumns(10);
-        tfNMI.setBounds(257, 209, 134, 31);
+        tfNMI.setBounds(24, 242, 353, 31);
         add(tfNMI);
 
         JLabel lblFunc = new JLabel("Función a maximizar:");
-        lblFunc.setBounds(24, 251, 134, 31);
+        lblFunc.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblFunc.setBounds(24, 294, 134, 31);
         add(lblFunc);
 
         tfX1 = new JTextField();
-        tfX1.setBounds(48, 302, 77, 20);
+        tfX1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        tfX1.setBounds(54, 328, 60, 30);
         add(tfX1);
         tfX1.setColumns(10);
 
         tfX2 = new JTextField();
+        tfX2.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfX2.setColumns(10);
-        tfX2.setBounds(175, 302, 77, 20);
+        tfX2.setBounds(162, 328, 60, 30);
         add(tfX2);
 
         tfX3 = new JTextField();
+        tfX3.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfX3.setColumns(10);
-        tfX3.setBounds(300, 302, 77, 20);
+        tfX3.setBounds(279, 328, 60, 30);
         add(tfX3);
 
-        JLabel lblZ = new JLabel("Z =                              * X1 +                               * X2  +                              * X3");
-        lblZ.setBounds(24, 305, 396, 14);
+        JLabel lblZ = new JLabel("Z =                  * X1 +                   * X2  +                  * X3");
+        lblZ.setFont(new Font("Tahoma", Font.PLAIN, 12));
+        lblZ.setBounds(24, 336, 396, 14);
         add(lblZ);
 
         JLabel lblRestricciones = new JLabel("Restricciones:");
-        lblRestricciones.setBounds(24, 333, 114, 31);
+        lblRestricciones.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblRestricciones.setBounds(24, 391, 114, 31);
         add(lblRestricciones);
 
         tfX1X2 = new JTextField();
+        tfX1X2.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfX1X2.setColumns(10);
-        tfX1X2.setBounds(232, 376, 77, 20);
+        tfX1X2.setBounds(208, 438, 77, 30);
         add(tfX1X2);
 
         tfMenorX1 = new JTextField();
+        tfMenorX1.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfMenorX1.setColumns(10);
-        tfMenorX1.setBounds(61, 419, 77, 20);
+        tfMenorX1.setBounds(44, 489, 77, 30);
         add(tfMenorX1);
 
         tfMayorX1 = new JTextField();
+        tfMayorX1.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfMayorX1.setColumns(10);
-        tfMayorX1.setBounds(232, 419, 77, 20);
+        tfMayorX1.setBounds(211, 489, 77, 30);
         add(tfMayorX1);
 
         tfMenorX2 = new JTextField();
+        tfMenorX2.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfMenorX2.setColumns(10);
-        tfMenorX2.setBounds(61, 460, 77, 20);
+        tfMenorX2.setBounds(44, 530, 77, 30);
         add(tfMenorX2);
 
         tfMayorX2 = new JTextField();
+        tfMayorX2.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfMayorX2.setColumns(10);
-        tfMayorX2.setBounds(232, 460, 77, 20);
+        tfMayorX2.setBounds(211, 530, 77, 30);
         add(tfMayorX2);
 
         tfMenorX3 = new JTextField();
+        tfMenorX3.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfMenorX3.setColumns(10);
-        tfMenorX3.setBounds(61, 506, 77, 20);
+        tfMenorX3.setBounds(44, 571, 77, 30);
         add(tfMenorX3);
 
         tfMayorX3 = new JTextField();
+        tfMayorX3.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfMayorX3.setColumns(10);
-        tfMayorX3.setBounds(232, 506, 77, 20);
+        tfMayorX3.setBounds(211, 571, 77, 30);
         add(tfMayorX3);
 
         JLabel lblX1X2 = new JLabel("X1 + X2 ≥");
-        lblX1X2.setBounds(152, 379, 70, 14);
+        lblX1X2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblX1X2.setBounds(131, 437, 70, 30);
         add(lblX1X2);
 
         JLabel lblX1 = new JLabel("≤ X1 ≤");
-        lblX1.setBounds(162, 422, 41, 14);
+        lblX1.setHorizontalAlignment(SwingConstants.CENTER);
+        lblX1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblX1.setBounds(131, 488, 70, 30);
         add(lblX1);
 
         JLabel lblX2 = new JLabel("≤ X2 ≤");
-        lblX2.setBounds(162, 463, 41, 14);
+        lblX2.setHorizontalAlignment(SwingConstants.CENTER);
+        lblX2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblX2.setBounds(131, 537, 67, 14);
         add(lblX2);
 
         JLabel lblX3 = new JLabel("≤ X3 ≤");
-        lblX3.setBounds(162, 509, 41, 14);
+        lblX3.setHorizontalAlignment(SwingConstants.CENTER);
+        lblX3.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblX3.setBounds(131, 578, 67, 14);
         add(lblX3);
 
         JButton btnSimular = new JButton("Simular");
@@ -178,44 +203,52 @@ public class PanelEj3 extends JPanel {
         add(btnLimpiar);
 
         JLabel lblPromedios = new JLabel("Promedios de los resultados de las simulaciones");
-        lblPromedios.setFont(new Font("Tahoma", Font.BOLD, 11));
-        lblPromedios.setBounds(455, 439, 292, 14);
+        lblPromedios.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblPromedios.setBounds(455, 437, 420, 30);
         add(lblPromedios);
 
         JLabel lblPromedioZ = new JLabel("Función Objetivo (Z):");
-        lblPromedioZ.setBounds(455, 485, 146, 14);
+        lblPromedioZ.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblPromedioZ.setBounds(455, 478, 183, 30);
         add(lblPromedioZ);
 
         JLabel lblPromedioX1 = new JLabel("Variable de decisión 1 (X1):");
-        lblPromedioX1.setBounds(455, 523, 170, 14);
+        lblPromedioX1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblPromedioX1.setBounds(455, 519, 183, 30);
         add(lblPromedioX1);
 
         JLabel lblPromedioX2 = new JLabel("Variable de decisión 2 (X2):");
-        lblPromedioX2.setBounds(455, 559, 170, 14);
+        lblPromedioX2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblPromedioX2.setBounds(455, 560, 183, 30);
         add(lblPromedioX2);
 
         JLabel lblPromedioX3 = new JLabel("Variable de decisión 3 (X3):");
-        lblPromedioX3.setBounds(455, 599, 170, 14);
+        lblPromedioX3.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblPromedioX3.setBounds(455, 601, 183, 30);
         add(lblPromedioX3);
 
         tfPromedioZ = new JTextField();
-        tfPromedioZ.setBounds(635, 482, 132, 20);
+        tfPromedioZ.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        tfPromedioZ.setBounds(635, 479, 198, 30);
         add(tfPromedioZ);
         tfPromedioZ.setColumns(10);
 
         tfPromedioX1 = new JTextField();
+        tfPromedioX1.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfPromedioX1.setColumns(10);
-        tfPromedioX1.setBounds(635, 520, 132, 20);
+        tfPromedioX1.setBounds(635, 519, 198, 30);
         add(tfPromedioX1);
 
         tfPromedioX2 = new JTextField();
+        tfPromedioX2.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfPromedioX2.setColumns(10);
-        tfPromedioX2.setBounds(635, 556, 132, 20);
+        tfPromedioX2.setBounds(635, 560, 198, 30);
         add(tfPromedioX2);
 
         tfPromedioX3 = new JTextField();
+        tfPromedioX3.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfPromedioX3.setColumns(10);
-        tfPromedioX3.setBounds(635, 596, 132, 20);
+        tfPromedioX3.setBounds(635, 602, 198, 30);
         add(tfPromedioX3);
 
         // Eventos para botones

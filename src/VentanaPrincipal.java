@@ -17,7 +17,7 @@ public class VentanaPrincipal extends JFrame {
         setSize(1000, 700);
         JPanel contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
-        setTitle("Generación de Números Aleatorios");
+        setTitle("PRACTICA NRO. 5");
 
         // Centrar la ventana en la pantalla
         setLocationRelativeTo(null);

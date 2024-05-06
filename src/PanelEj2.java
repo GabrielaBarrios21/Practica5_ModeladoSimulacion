@@ -19,9 +19,10 @@ public class PanelEj2 extends JPanel {
      * Create the panel.
      */
     public PanelEj2() {
+        setBackground(new Color(204, 255, 255));
         setLayout(null);
         JLabel lblTitulo = new JLabel("Población de Bolivia");
-        lblTitulo.setBounds(0, 0, 1000, 31);
+        lblTitulo.setBounds(0, 0, 1000, 46);
         lblTitulo.setFont(new Font("Dialog", Font.BOLD, 20));
         lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitulo.setForeground(Color.BLACK);
@@ -31,7 +32,7 @@ public class PanelEj2 extends JPanel {
         setSize(1000, 670);
 
         JButton btnAtras = new JButton("<<Atrás");
-        btnAtras.setBounds(10, 25, 89, 23);
+        btnAtras.setBounds(10, 25, 89, 40);
         btnAtras.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 PanelPrincipal panerlprincipal = new PanelPrincipal();
@@ -60,7 +61,7 @@ public class PanelEj2 extends JPanel {
         add(btnLimpiar);
 
         JScrollPane spResultadosSimulaciones = new JScrollPane();
-        spResultadosSimulaciones.setBounds(377, 170, 578, 294);
+        spResultadosSimulaciones.setBounds(377, 170, 578, 355);
         add(spResultadosSimulaciones);
 
         // Crear la tabla inicial con los encabezados
@@ -74,47 +75,58 @@ public class PanelEj2 extends JPanel {
         spResultadosSimulaciones.setViewportView(table);
 
         JLabel lblAnio = new JLabel("Año del cual se quiere conocer la población:");
-        lblAnio.setBounds(42, 155, 250, 14);
+        lblAnio.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblAnio.setBounds(40, 170, 320, 30);
         add(lblAnio);
 
         tfT = new JTextField();
-        tfT.setBounds(42, 181, 153, 20);
+        tfT.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        tfT.setBounds(40, 200, 300, 30);
         add(tfT);
         tfT.setColumns(10);
 
         JLabel lbTasaNatalidad = new JLabel("Tasa de natalidad (TN):");
-        lbTasaNatalidad.setBounds(42, 225, 153, 14);
+        lbTasaNatalidad.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lbTasaNatalidad.setBounds(40, 256, 153, 30);
         add(lbTasaNatalidad);
 
         tfTasaNatalidad = new JTextField();
+        tfTasaNatalidad.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfTasaNatalidad.setColumns(10);
-        tfTasaNatalidad.setBounds(42, 250, 104, 20);
+        tfTasaNatalidad.setBounds(40, 286, 300, 30);
         add(tfTasaNatalidad);
 
-        JLabel lblPorcentaje = new JLabel("nacimientos por 1000 personas");
-        lblPorcentaje.setBounds(149, 253, 200, 14);
+        JLabel lblPorcentaje = new JLabel("nacimientos / 1000 personas");
+        lblPorcentaje.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblPorcentaje.setBounds(40, 319, 200, 14);
         add(lblPorcentaje);
 
         JLabel lblPobBol = new JLabel("Población en Bolivia el 2012");
-        lblPobBol.setBounds(42, 361, 200, 14);
+        lblPobBol.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblPobBol.setBounds(40, 467, 200, 30);
         add(lblPobBol);
 
         tfPBol = new JTextField();
+        tfPBol.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfPBol.setColumns(10);
-        tfPBol.setBounds(42, 386, 104, 20);
+        tfPBol.setBounds(40, 500, 300, 25);
         add(tfPBol);
 
         JLabel lblBs = new JLabel("Personas.");
-        lblBs.setBounds(149, 392, 60, 14);
+        lblBs.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblBs.setBounds(40, 525, 60, 30);
         add(lblBs);
 
-        JLabel lblPBolFinal = new JLabel("Población en Bolivia:");
-        lblPBolFinal.setBounds(395, 481, 120, 14);
+        JLabel lblPBolFinal = new JLabel("Población en Bolivia (PBol):");
+        lblPBolFinal.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblPBolFinal.setBounds(387, 549, 163, 30);
         add(lblPBolFinal);
 
         tfPBol_final = new JTextField();
+        tfPBol_final.setBackground(new Color(255, 255, 255));
+        tfPBol_final.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfPBol_final.setEditable(false); // No se puede editar manualmente
-        tfPBol_final.setBounds(525, 478, 208, 20);
+        tfPBol_final.setBounds(568, 550, 300, 30);
         add(tfPBol_final);
         tfPBol_final.setColumns(10);
 
@@ -130,17 +142,25 @@ public class PanelEj2 extends JPanel {
          */
 
         JLabel lbTasaMortandad = new JLabel("Tasa de mortandad (TM):");
-        lbTasaMortandad.setBounds(42, 292, 153, 14);
+        lbTasaMortandad.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lbTasaMortandad.setBounds(40, 357, 300, 30);
         add(lbTasaMortandad);
 
         tfTasaMortandad = new JTextField();
+        tfTasaMortandad.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfTasaMortandad.setColumns(10);
-        tfTasaMortandad.setBounds(42, 310, 104, 20);
+        tfTasaMortandad.setBounds(40, 388, 300, 30);
         add(tfTasaMortandad);
 
-        JLabel lblPorcentaje_1 = new JLabel("muertes por 1000 personas");
-        lblPorcentaje_1.setBounds(149, 313, 200, 14);
+        JLabel lblPorcentaje_1 = new JLabel("muertes / 1000 personas");
+        lblPorcentaje_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblPorcentaje_1.setBounds(40, 422, 200, 14);
         add(lblPorcentaje_1);
+
+        JLabel lblBs_1 = new JLabel("Personas.");
+        lblBs_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblBs_1.setBounds(895, 549, 60, 30);
+        add(lblBs_1);
 
         btnSimular.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
