@@ -19,9 +19,10 @@ public class PanelEj4 extends JPanel {
      * Create the panel.
      */
     public PanelEj4() {
+        setBackground(new Color(204, 255, 255));
         setLayout(null);
         JLabel lblTitulo = new JLabel("Juego de dados");
-        lblTitulo.setBounds(0, 0, 1000, 31);
+        lblTitulo.setBounds(0, 0, 1000, 46);
         lblTitulo.setFont(new Font("Dialog", Font.BOLD, 20));
         lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitulo.setForeground(Color.BLACK);
@@ -31,7 +32,7 @@ public class PanelEj4 extends JPanel {
         setSize(1000, 670);
 
         JButton btnAtras = new JButton("<<Atrás");
-        btnAtras.setBounds(10, 25, 89, 23);
+        btnAtras.setBounds(10, 25, 89, 40);
         btnAtras.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 PanelPrincipal panerlprincipal = new PanelPrincipal();
@@ -46,11 +47,13 @@ public class PanelEj4 extends JPanel {
         add(btnAtras);
 
         JLabel lblSimulaciones = new JLabel("Número de simulaciones:");
-        lblSimulaciones.setBounds(24, 86, 134, 37);
+        lblSimulaciones.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblSimulaciones.setBounds(25, 121, 190, 37);
         add(lblSimulaciones);
 
         numSim = new JTextField();
-        numSim.setBounds(192, 89, 134, 31);
+        numSim.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        numSim.setBounds(205, 125, 170, 30);
         add(numSim);
         numSim.setColumns(10);
 
@@ -63,8 +66,8 @@ public class PanelEj4 extends JPanel {
         add(btnLimpiar);
 
         JLabel lblParametros = new JLabel("Parámetros de la Simulación");
-        lblParametros.setFont(new Font("Tahoma", Font.BOLD, 11));
-        lblParametros.setBounds(24, 149, 190, 14);
+        lblParametros.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblParametros.setBounds(24, 169, 350, 30);
         add(lblParametros);
 
         JScrollPane spResultadosSimulaciones = new JScrollPane();
@@ -82,63 +85,100 @@ public class PanelEj4 extends JPanel {
         spResultadosSimulaciones.setViewportView(table);
 
         JLabel lblPromedios = new JLabel("Promedios de los resultados de las simulaciones");
-        lblPromedios.setFont(new Font("Tahoma", Font.BOLD, 11));
-        lblPromedios.setBounds(455, 439, 292, 14);
+        lblPromedios.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblPromedios.setBounds(455, 439, 438, 30);
         add(lblPromedios);
 
         JLabel lblNML = new JLabel("Número máximo de lanzamientos (NML):");
-        lblNML.setBounds(25, 197, 220, 14);
+        lblNML.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblNML.setBounds(25, 217, 350, 30);
         add(lblNML);
 
         tfNML = new JTextField();
-        tfNML.setBounds(255, 194, 120, 20);
+        tfNML.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        tfNML.setBounds(25, 245, 350, 30);
         add(tfNML);
         tfNML.setColumns(10);
 
         JLabel lblIUJ = new JLabel("Ingreso unitario del juego (IUJ): ");
-        lblIUJ.setBounds(24, 240, 190, 14);
+        lblIUJ.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblIUJ.setBounds(24, 300, 351, 30);
         add(lblIUJ);
 
         tfIUJ = new JTextField();
+        tfIUJ.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfIUJ.setColumns(10);
-        tfIUJ.setBounds(255, 237, 120, 20);
+        tfIUJ.setBounds(25, 328, 279, 30);
         add(tfIUJ);
 
         JLabel lblPUJ = new JLabel("Pérdida unitaria de la casa (PUC):");
-        lblPUJ.setBounds(24, 293, 190, 14);
+        lblPUJ.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblPUJ.setBounds(25, 392, 350, 30);
         add(lblPUJ);
 
         tfPUC = new JTextField();
+        tfPUC.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfPUC.setColumns(10);
-        tfPUC.setBounds(255, 290, 120, 20);
+        tfPUC.setBounds(25, 422, 279, 30);
         add(tfPUC);
 
         JLabel lblGNC = new JLabel("Ganancia neta de la casa (GNC):");
-        lblGNC.setBounds(455, 476, 239, 14);
+        lblGNC.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblGNC.setBounds(455, 486, 239, 30);
         add(lblGNC);
 
         tfGNC_promedio = new JTextField();
+        tfGNC_promedio.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfGNC_promedio.setColumns(10);
-        tfGNC_promedio.setBounds(704, 473, 120, 20);
+        tfGNC_promedio.setBounds(701, 487, 190, 30);
         add(tfGNC_promedio);
 
         JLabel lblNJC = new JLabel("Nro. de juegos ganados por la casa (NJC):");
-        lblNJC.setBounds(455, 516, 239, 14);
+        lblNJC.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblNJC.setBounds(455, 539, 287, 30);
         add(lblNJC);
 
         tfNJC_promedio = new JTextField();
+        tfNJC_promedio.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfNJC_promedio.setColumns(10);
-        tfNJC_promedio.setBounds(704, 513, 120, 20);
+        tfNJC_promedio.setBounds(751, 540, 142, 30);
         add(tfNJC_promedio);
 
         JLabel lblPJC = new JLabel("Porcentaje juegos ganados por la casa (PJC):");
-        lblPJC.setBounds(455, 563, 249, 14);
+        lblPJC.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblPJC.setBounds(455, 589, 296, 30);
         add(lblPJC);
 
         tfPJC_promedio = new JTextField();
+        tfPJC_promedio.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfPJC_promedio.setColumns(10);
-        tfPJC_promedio.setBounds(704, 560, 120, 20);
+        tfPJC_promedio.setBounds(751, 590, 142, 30);
         add(tfPJC_promedio);
+
+        JLabel lblBsLanz = new JLabel("Bs./lanzamiento");
+        lblBsLanz.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblBsLanz.setBounds(314, 327, 127, 30);
+        add(lblBsLanz);
+
+        JLabel lblBsLanz_1 = new JLabel("Bs./lanzamiento");
+        lblBsLanz_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblBsLanz_1.setBounds(314, 423, 127, 30);
+        add(lblBsLanz_1);
+
+        JLabel lblBs = new JLabel("Bs.");
+        lblBs.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblBs.setBounds(892, 486, 78, 30);
+        add(lblBs);
+
+        JLabel lblLanzamiento = new JLabel("lanzamiento");
+        lblLanzamiento.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblLanzamiento.setBounds(903, 539, 98, 30);
+        add(lblLanzamiento);
+
+        JLabel lblBs_1 = new JLabel(" %");
+        lblBs_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblBs_1.setBounds(903, 589, 78, 30);
+        add(lblBs_1);
 
         btnSimular.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

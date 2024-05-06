@@ -27,9 +27,10 @@ public class PanelEj7 extends JPanel {
      * Create the panel.
      */
     public PanelEj7() {
+        setBackground(new Color(204, 255, 255));
         setLayout(null);
-        JLabel lblTitulo = new JLabel("Gallinita");
-        lblTitulo.setBounds(0, 0, 1000, 31);
+        JLabel lblTitulo = new JLabel("Gallina");
+        lblTitulo.setBounds(0, 0, 1000, 46);
         lblTitulo.setFont(new Font("Dialog", Font.BOLD, 20));
         lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitulo.setForeground(Color.BLACK);
@@ -39,7 +40,7 @@ public class PanelEj7 extends JPanel {
         setSize(1000, 670);
 
         JButton btnAtras = new JButton("<<Atrás");
-        btnAtras.setBounds(10, 25, 89, 23);
+        btnAtras.setBounds(10, 25, 89, 40);
         btnAtras.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 PanelPrincipal panerlprincipal = new PanelPrincipal();
@@ -54,11 +55,11 @@ public class PanelEj7 extends JPanel {
         add(btnAtras);
 
         JLabel lblSimulaciones = new JLabel("Número de simulaciones:");
-        lblSimulaciones.setBounds(24, 86, 134, 37);
+        lblSimulaciones.setBounds(24, 86, 187, 37);
         add(lblSimulaciones);
 
         numSim = new JTextField();
-        numSim.setBounds(192, 89, 134, 31);
+        numSim.setBounds(221, 89, 134, 31);
         add(numSim);
         numSim.setColumns(10);
 
@@ -80,7 +81,7 @@ public class PanelEj7 extends JPanel {
         add(spResultadosSimulaciones);
 
         // Crear la tabla inicial con los encabezados
-        String[] columnNames = {"NSIM", "GN", "GNP", "THR", "TPO", "THUE"};
+        String[] columnNames = {"NSIM", "GN", "GNP", "THR", "PVIV", "THUE"};
         Object[][] data = {}; // No hay datos inicialmente
         table = new JTable(data, columnNames);
         table.setPreferredScrollableViewportSize(new Dimension(515, 256));
@@ -215,7 +216,7 @@ public class PanelEj7 extends JPanel {
         lblPollo_1.setBounds(192, 416, 72, 14);
         add(lblPollo_1);
 
-        JLabel lblGananciaNetaPor = new JLabel("Ganancia Neta por día (GN):");
+        JLabel lblGananciaNetaPor = new JLabel("Ganancia neta (GN):");
         lblGananciaNetaPor.setBounds(455, 471, 200, 14);
         add(lblGananciaNetaPor);
 
@@ -227,11 +228,11 @@ public class PanelEj7 extends JPanel {
         lblTotalPermanecenComo.setBounds(455, 537, 200, 14);
         add(lblTotalPermanecenComo);
 
-        JLabel lblTotalPollostpo = new JLabel("Total pollos (TPO):");
+        JLabel lblTotalPollostpo = new JLabel("Total pollos vivos vendidos (TVIV):");
         lblTotalPollostpo.setBounds(455, 571, 200, 14);
         add(lblTotalPollostpo);
 
-        JLabel lblTotalPermanecenComo_1 = new JLabel("Total permanecen como huevo(THUE):");
+        JLabel lblTotalPermanecenComo_1 = new JLabel("Total huevos vendidos(THUE):");
         lblTotalPermanecenComo_1.setBounds(455, 606, 207, 14);
         add(lblTotalPermanecenComo_1);
 
@@ -259,6 +260,26 @@ public class PanelEj7 extends JPanel {
         tfTHUE_promedio.setColumns(10);
         tfTHUE_promedio.setBounds(659, 603, 128, 20);
         add(tfTHUE_promedio);
+
+        JLabel lblBs = new JLabel("Bs.");
+        lblBs.setBounds(797, 471, 72, 14);
+        add(lblBs);
+
+        JLabel lblBs_1 = new JLabel("Bs.");
+        lblBs_1.setBounds(797, 502, 72, 14);
+        add(lblBs_1);
+
+        JLabel lblBs_1_1 = new JLabel("huevos");
+        lblBs_1_1.setBounds(797, 537, 72, 14);
+        add(lblBs_1_1);
+
+        JLabel lblBs_1_1_1 = new JLabel("pollos");
+        lblBs_1_1_1.setBounds(797, 571, 72, 14);
+        add(lblBs_1_1_1);
+
+        JLabel lblBs_1_1_1_1 = new JLabel("huevos");
+        lblBs_1_1_1_1.setBounds(797, 606, 72, 14);
+        add(lblBs_1_1_1_1);
 
         btnSimular.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -325,6 +346,13 @@ public class PanelEj7 extends JPanel {
                     double PUH = Double.parseDouble(precioHuevo);
                     double PUP = Double.parseDouble(precioPollo);
                     double mHuevos = Double.parseDouble(mediaHuevos);
+                    //para las probs
+                    double prob0 = poisson(mHuevos , 0);
+                    double prob1 = poisson(mHuevos , 1);
+                    double prob2 = poisson(mHuevos , 2);
+                    double prob3 = poisson(mHuevos , 3);
+                    double prob4 = poisson(mHuevos , 4);
+                    double prob5 = poisson(mHuevos , 5);
 
                     double pRoto = Double.parseDouble(probRoto);
                     double pPollo = Double.parseDouble(probPollo);
@@ -337,11 +365,11 @@ public class PanelEj7 extends JPanel {
                     double sumaGN = 0;
                     double sumaGNP = 0;
                     double sumaTHR = 0;
-                    double sumaTPO = 0;
+                    double sumaPVIV = 0;
                     double sumaTHUE = 0;
 
                     // Limpiar contenido previo del JScrollPane
-                    String[] columnNames = {"NSIM", "GN", "GNP", "THR", "TPO", "THUE"};
+                    String[] columnNames = {"NSIM", "GN", "GNP", "THR", "TVIV", "THUE"};
                     Object[][] data = new Object[(int) numSim][6];
 
                     // Realizar la simulación y llenar los datos
@@ -354,27 +382,59 @@ public class PanelEj7 extends JPanel {
                         long PMUE = 0;
                         long PVIV = 0;
                         double GN = 0;
+                        double GNP = 0;
 
                         double r_hue;
-                        long HUE;
+                        int HUE = 0;
+
+                        double r_DPO;
 
                         do {
                             CD += 1;
                             r_hue = Math.random();
-                            if(r_hue>=0 && r_hue <= 0.14){
+                            if(r_hue>=0 && r_hue <= prob0){
                                 HUE = 0;
-                            } else if (r_hue<0.14 && r_hue<=0.68){
-
+                            } else if (r_hue<prob0 && r_hue<=(prob0 + prob1)){
+                                HUE = 1;
+                            } else if (r_hue<(prob0 + prob1) && r_hue<=(prob0 + prob1 + prob2)){
+                                HUE = 2;
+                            } else if (r_hue<(prob0 + prob1 + prob2) && r_hue<=(prob0 + prob1 + prob2 + prob3)){
+                                HUE = 3;
+                            } else if (r_hue<(prob0 + prob1 + prob2 + prob3) && r_hue<=(prob0 + prob1 + prob2 + prob3 + prob4)){
+                                HUE = 4;
+                            } else if (r_hue<(prob0 + prob1 + prob2 + prob3 + prob4) && r_hue<=(prob0 + prob1 + prob2 + prob3 + prob4 + prob5)){
+                                HUE = 5;
+                            } else {
+                                HUE = 6;
                             }
-
+                            while (HUE>0){
+                                HUE -= 1;
+                                r_hue = Math.random();
+                                if(r_hue >= 0 && r_hue <= pRoto){
+                                    THR += 1;
+                                } else if (r_hue > pRoto && r_hue <= (pRoto + pPollo) ){
+                                    TPO += 1;
+                                    r_DPO = Math.random();
+                                    if(r_DPO >= 0 && r_DPO <= pMuere){
+                                        PMUE += 1;
+                                    } else {
+                                        PVIV += 1;
+                                    }
+                                } else {
+                                    THUE += 1;
+                                }
+                            }
                         } while(CD < NMD);
-                        /*
-                        GN = TAV*(PVU-CUA) - CF;
-                        data[(int) (NSIM-1)] = new Object[]{NSIM, TAV, GN};
-                        suma_GN += GN;
-                        suma_TAV += TAV;
 
-                         */
+                        GN = PUP*PVIV + PUH*THUE;
+                        GNP = GN / NMD;
+                        data[(int) (NSIM-1)] = new Object[]{NSIM, GN, GNP, THR, PVIV, THUE};
+                        sumaGN += GN;
+                        sumaGNP += GNP;
+                        sumaTHR += THR;
+                        sumaPVIV += PVIV;
+                        sumaTHUE += THUE;
+
 
                     } while (NSIM < numSim);
 
@@ -387,8 +447,11 @@ public class PanelEj7 extends JPanel {
                     spResultadosSimulaciones.setViewportView(table);
 
                     // Mostrar Promedios
-                    //tfTAV_promedio.setText(String.valueOf(suma_TAV / numSim));
-                    //tfGN_promedio.setText(String.valueOf(suma_GN / numSim));
+                    tfGN_promedio.setText(String.valueOf(sumaGN / NSIM));
+                    tfGNP_promedio.setText(String.valueOf(sumaGNP / NSIM));
+                    tfTHR_promedio.setText(String.valueOf(sumaTHR / NSIM));
+                    tfTPO_promedio.setText(String.valueOf(sumaPVIV / NSIM));
+                    tfTHUE_promedio.setText(String.valueOf(sumaTHUE / NSIM));
                 }
             }
         });
@@ -412,7 +475,7 @@ public class PanelEj7 extends JPanel {
                 tfTHUE_promedio.setText("");
 
                 // Limpiar datos de la tabla (excepto los encabezados)
-                String[] columnNames = {"NSIM", "GN", "GNP", "THR", "TPO", "THUE"};
+                String[] columnNames = {"NSIM", "GN", "GNP", "THR", "PVIV", "THUE"};
                 Object[][] data = {}; // No hay datos inicialmente
                 table = new JTable(data, columnNames);
                 table.setPreferredScrollableViewportSize(new Dimension(515, 256));
@@ -423,5 +486,20 @@ public class PanelEj7 extends JPanel {
             }
         });
 
+    }
+    // Función factorial
+    public static long factorial(long n) {
+        if (n == 0)
+            return 1;
+        long fact = 1;
+        for (long i = 1; i <= n; i++) {
+            fact *= i;
+        }
+        return fact;
+    }
+
+    // Función de distribución de Poisson
+    public static double poisson(double m, int x) {
+        return (Math.exp(-m) * Math.pow(m, x)) / factorial(x);
     }
 }

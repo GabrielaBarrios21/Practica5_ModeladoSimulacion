@@ -10,11 +10,12 @@ public class PanelPrincipal extends JPanel {
      * Create the panel.
      */
     public PanelPrincipal() {
+        setBackground(new Color(204, 255, 255));
         setLayout(null);
 
         JLabel lblTitulo = new JLabel("PRÁCTICA 5");
-        lblTitulo.setBounds(0, 0, 1000, 45);
-        lblTitulo.setFont(new Font("Dialog", Font.BOLD, 25));
+        lblTitulo.setBounds(0, 0, 1000, 69);
+        lblTitulo.setFont(new Font("Dialog", Font.BOLD, 28));
         lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitulo.setForeground(Color.BLACK);
         add(lblTitulo);
@@ -22,7 +23,7 @@ public class PanelPrincipal extends JPanel {
         //setBackground(Color.decode("#2B4F60"));
         setSize(1000, 670);
 
-        JButton btnEj1 = new JButton("ej1");
+        JButton btnEj1 = new JButton("Depósito Banco");
         btnEj1.setBounds(47, 111, 200, 120);
         btnEj1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -38,7 +39,7 @@ public class PanelPrincipal extends JPanel {
         });
         add(btnEj1);
 
-        JButton btnEj2 = new JButton("ej2");
+        JButton btnEj2 = new JButton("Población Bolivia");
         btnEj2.setBounds(407, 111, 200, 120);
         btnEj2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -53,7 +54,7 @@ public class PanelPrincipal extends JPanel {
         });
         add(btnEj2);
 
-        JButton btnEj3 = new JButton("ej3");
+        JButton btnEj3 = new JButton("Maximizar Z");
         btnEj3.setBounds(745, 111, 200, 120);
         btnEj3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -68,7 +69,7 @@ public class PanelPrincipal extends JPanel {
         });
         add(btnEj3);
 
-        JButton btnEj4 = new JButton("ej4");
+        JButton btnEj4 = new JButton("Juego de Dados");
         btnEj4.setBounds(47, 292, 200, 120);
         btnEj4.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -83,7 +84,7 @@ public class PanelPrincipal extends JPanel {
         });
         add(btnEj4);
 
-        JButton btnEj5 = new JButton("ej5");
+        JButton btnEj5 = new JButton("Juego de Monedas");
         btnEj5.setBounds(407, 292, 200, 120);
         btnEj5.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -98,7 +99,7 @@ public class PanelPrincipal extends JPanel {
         });
         add(btnEj5);
 
-        JButton btnEj6 = new JButton("ej6");
+        JButton btnEj6 = new JButton("Lllegada de clientes");
         btnEj6.setBounds(745, 292, 200, 120);
         btnEj6.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -113,7 +114,7 @@ public class PanelPrincipal extends JPanel {
         });
         add(btnEj6);
 
-        JButton btnEj7 = new JButton("ej7");
+        JButton btnEj7 = new JButton("Gallina");
         btnEj7.setBounds(215, 491, 200, 120);
         btnEj7.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -128,8 +129,9 @@ public class PanelPrincipal extends JPanel {
         });
         add(btnEj7);
 
-        JButton btnEj8 = new JButton("ej8");
+        JButton btnEj8 = new JButton("Azúcar");
         btnEj8.setBounds(571, 491, 200, 120);
+        /*
         btnEj8.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 PanelEj8 panel8 = new PanelEj8();
@@ -141,6 +143,8 @@ public class PanelPrincipal extends JPanel {
                 frame.repaint();
             }
         });
+        */
+
         add(btnEj8);
 
     }

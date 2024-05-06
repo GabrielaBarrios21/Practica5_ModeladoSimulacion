@@ -25,9 +25,10 @@ public class PanelEj6 extends JPanel {
      * Create the panel.
      */
     public PanelEj6() {
+        setBackground(new Color(204, 255, 255));
         setLayout(null);
         JLabel lblTitulo = new JLabel("Llegada de clientes");
-        lblTitulo.setBounds(0, 0, 1000, 31);
+        lblTitulo.setBounds(0, 0, 1000, 46);
         lblTitulo.setFont(new Font("Dialog", Font.BOLD, 20));
         lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitulo.setForeground(Color.BLACK);
@@ -37,7 +38,7 @@ public class PanelEj6 extends JPanel {
         setSize(1000, 670);
 
         JButton btnAtras = new JButton("<<Atrás");
-        btnAtras.setBounds(10, 25, 89, 23);
+        btnAtras.setBounds(10, 25, 89, 40);
         btnAtras.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 PanelPrincipal panerlprincipal = new PanelPrincipal();
@@ -52,11 +53,12 @@ public class PanelEj6 extends JPanel {
         add(btnAtras);
 
         JLabel lblSimulaciones = new JLabel("Número de simulaciones:");
-        lblSimulaciones.setBounds(24, 86, 150, 37);
+        lblSimulaciones.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblSimulaciones.setBounds(24, 86, 196, 30);
         add(lblSimulaciones);
 
         numSim = new JTextField();
-        numSim.setBounds(192, 89, 134, 31);
+        numSim.setBounds(221, 88, 134, 31);
         add(numSim);
         numSim.setColumns(10);
 
@@ -83,167 +85,199 @@ public class PanelEj6 extends JPanel {
         spResultadosSimulaciones.setViewportView(table);
 
         JLabel lblPromedios = new JLabel("Promedios de los resultados de las simulaciones");
-        lblPromedios.setFont(new Font("Tahoma", Font.BOLD, 11));
-        lblPromedios.setBounds(455, 439, 292, 14);
+        lblPromedios.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblPromedios.setBounds(455, 417, 461, 30);
         add(lblPromedios);
 
         JLabel lblParametros = new JLabel("Parámetros de la Simulación");
-        lblParametros.setFont(new Font("Tahoma", Font.BOLD, 11));
-        lblParametros.setBounds(24, 149, 190, 14);
+        lblParametros.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblParametros.setBounds(24, 149, 243, 30);
         add(lblParametros);
 
         JLabel lblNMH = new JLabel("Número máximo de horas (NMH): ");
-        lblNMH.setBounds(24, 185, 200, 14);
+        lblNMH.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblNMH.setBounds(24, 193, 302, 20);
         add(lblNMH);
 
         tfNMH = new JTextField();
-        tfNMH.setBounds(234, 182, 83, 20);
+        tfNMH.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        tfNMH.setBounds(24, 218, 302, 30);
         add(tfNMH);
         tfNMH.setColumns(10);
 
         JLabel lblCF = new JLabel("Costo fijo diario (CF): ");
-        lblCF.setBounds(24, 225, 200, 14);
+        lblCF.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblCF.setBounds(24, 252, 200, 14);
         add(lblCF);
 
         tfCF = new JTextField();
+        tfCF.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfCF.setColumns(10);
-        tfCF.setBounds(234, 222, 83, 20);
+        tfCF.setBounds(24, 277, 302, 30);
         add(tfCF);
 
         JLabel lblCUA = new JLabel("Costo unitario por artículo (CUA):");
-        lblCUA.setBounds(24, 265, 200, 14);
+        lblCUA.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblCUA.setBounds(24, 314, 302, 14);
         add(lblCUA);
 
         tfCUA = new JTextField();
+        tfCUA.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfCUA.setColumns(10);
-        tfCUA.setBounds(234, 262, 83, 20);
+        tfCUA.setBounds(24, 339, 302, 30);
         add(tfCUA);
 
         JLabel lblPVU = new JLabel("Precio de venta unitario (PVU): ");
-        lblPVU.setBounds(24, 309, 200, 14);
+        lblPVU.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblPVU.setBounds(24, 374, 218, 14);
         add(lblPVU);
 
         tfPVU = new JTextField();
+        tfPVU.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfPVU.setColumns(10);
-        tfPVU.setBounds(234, 306, 83, 20);
+        tfPVU.setBounds(24, 399, 302, 30);
         add(tfPVU);
 
         JLabel lblLlegadaCli = new JLabel("Llegada de clientes por hora (Dist. Uniforme)");
-        lblLlegadaCli.setFont(new Font("Tahoma", Font.BOLD, 11));
-        lblLlegadaCli.setBounds(24, 356, 302, 14);
+        lblLlegadaCli.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblLlegadaCli.setBounds(24, 451, 368, 20);
         add(lblLlegadaCli);
 
         JLabel lblMinU = new JLabel("Mínimo:");
-        lblMinU.setBounds(24, 392, 58, 14);
+        lblMinU.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblMinU.setBounds(24, 483, 58, 14);
         add(lblMinU);
 
         tfMinCli = new JTextField();
-        tfMinCli.setBounds(92, 389, 73, 20);
+        tfMinCli.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        tfMinCli.setBounds(92, 480, 73, 30);
         add(tfMinCli);
         tfMinCli.setColumns(10);
 
         JLabel lblMaxU = new JLabel("Máximo:");
-        lblMaxU.setBounds(200, 392, 58, 14);
+        lblMaxU.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblMaxU.setBounds(200, 483, 58, 14);
         add(lblMaxU);
 
         tfMaxCli = new JTextField();
+        tfMaxCli.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfMaxCli.setColumns(10);
-        tfMaxCli.setBounds(268, 389, 73, 20);
+        tfMaxCli.setBounds(268, 480, 73, 30);
         add(tfMaxCli);
 
         JLabel lblCompraPorCliente = new JLabel("Artículos comprados por cliente");
-        lblCompraPorCliente.setFont(new Font("Tahoma", Font.BOLD, 11));
-        lblCompraPorCliente.setBounds(24, 439, 302, 14);
+        lblCompraPorCliente.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblCompraPorCliente.setBounds(24, 532, 302, 20);
         add(lblCompraPorCliente);
 
         JLabel lblArticulos = new JLabel("Artículos");
-        lblArticulos.setBounds(24, 476, 75, 14);
+        lblArticulos.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblArticulos.setBounds(24, 559, 75, 14);
         add(lblArticulos);
 
         JLabel lblProb = new JLabel("Probabilidad");
-        lblProb.setBounds(24, 495, 75, 14);
+        lblProb.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblProb.setBounds(24, 582, 89, 14);
         add(lblProb);
 
         JLabel lbl0 = new JLabel("0");
+        lbl0.setFont(new Font("Tahoma", Font.PLAIN, 14));
         lbl0.setHorizontalAlignment(SwingConstants.CENTER);
-        lbl0.setBounds(109, 476, 46, 14);
+        lbl0.setBounds(109, 559, 46, 14);
         add(lbl0);
 
         tf0 = new JTextField();
-        tf0.setBounds(109, 492, 49, 20);
+        tf0.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        tf0.setBounds(109, 575, 49, 30);
         add(tf0);
         tf0.setColumns(10);
 
         JLabel lbl1 = new JLabel("1");
+        lbl1.setFont(new Font("Tahoma", Font.PLAIN, 14));
         lbl1.setHorizontalAlignment(SwingConstants.CENTER);
-        lbl1.setBounds(165, 476, 46, 14);
+        lbl1.setBounds(165, 559, 46, 14);
         add(lbl1);
 
         tf1 = new JTextField();
+        tf1.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tf1.setColumns(10);
-        tf1.setBounds(165, 492, 49, 20);
+        tf1.setBounds(165, 575, 49, 30);
         add(tf1);
 
         JLabel lbl2 = new JLabel("2");
+        lbl2.setFont(new Font("Tahoma", Font.PLAIN, 14));
         lbl2.setHorizontalAlignment(SwingConstants.CENTER);
-        lbl2.setBounds(221, 476, 46, 14);
+        lbl2.setBounds(221, 559, 46, 14);
         add(lbl2);
 
         tf2 = new JTextField();
+        tf2.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tf2.setColumns(10);
-        tf2.setBounds(221, 492, 49, 20);
+        tf2.setBounds(221, 575, 49, 30);
         add(tf2);
 
         JLabel lbl3 = new JLabel("3");
+        lbl3.setFont(new Font("Tahoma", Font.PLAIN, 14));
         lbl3.setHorizontalAlignment(SwingConstants.CENTER);
-        lbl3.setBounds(277, 476, 46, 14);
+        lbl3.setBounds(277, 559, 46, 14);
         add(lbl3);
 
         tf3 = new JTextField();
+        tf3.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tf3.setColumns(10);
-        tf3.setBounds(277, 492, 49, 20);
+        tf3.setBounds(277, 575, 49, 30);
         add(tf3);
 
         JLabel lblTAV_promedio = new JLabel("Total artículos vendidos por día (TAV): ");
-        lblTAV_promedio.setBounds(455, 464, 200, 14);
+        lblTAV_promedio.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblTAV_promedio.setBounds(455, 464, 253, 30);
         add(lblTAV_promedio);
 
         JLabel lblGN = new JLabel("Ganacia Neta (GN):");
-        lblGN.setBounds(455, 495, 145, 14);
+        lblGN.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblGN.setBounds(455, 518, 145, 30);
         add(lblGN);
 
         tfTAV_promedio = new JTextField();
-        tfTAV_promedio.setBounds(667, 461, 120, 20);
+        tfTAV_promedio.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        tfTAV_promedio.setBounds(718, 467, 145, 30);
         add(tfTAV_promedio);
         tfTAV_promedio.setColumns(10);
 
         tfGN_promedio = new JTextField();
+        tfGN_promedio.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfGN_promedio.setColumns(10);
-        tfGN_promedio.setBounds(667, 492, 120, 20);
+        tfGN_promedio.setBounds(628, 519, 183, 30);
         add(tfGN_promedio);
 
         JLabel lblNewLabel = new JLabel("horas");
-        lblNewLabel.setBounds(333, 185, 46, 14);
+        lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblNewLabel.setBounds(334, 225, 46, 14);
         add(lblNewLabel);
 
         JLabel lblBs = new JLabel("Bs./ día");
-        lblBs.setBounds(333, 225, 46, 14);
+        lblBs.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblBs.setBounds(333, 284, 59, 14);
         add(lblBs);
 
         JLabel lblBsArtculo = new JLabel("Bs./ artículo");
-        lblBsArtculo.setBounds(333, 265, 83, 14);
+        lblBsArtculo.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblBsArtculo.setBounds(336, 346, 83, 14);
         add(lblBsArtculo);
 
         JLabel lblBsArtculo_1 = new JLabel("Bs./ artículo");
-        lblBsArtculo_1.setBounds(333, 309, 83, 14);
+        lblBsArtculo_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblBsArtculo_1.setBounds(336, 406, 83, 14);
         add(lblBsArtculo_1);
 
         JLabel lblArtculos = new JLabel("artículos");
-        lblArtculos.setBounds(797, 464, 73, 14);
+        lblArtculos.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblArtculos.setBounds(885, 474, 73, 14);
         add(lblArtculos);
 
         JLabel lblBs_2_1 = new JLabel("Bs.");
-        lblBs_2_1.setBounds(797, 495, 73, 14);
+        lblBs_2_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblBs_2_1.setBounds(843, 526, 73, 14);
         add(lblBs_2_1);
 
         btnSimular.addActionListener(new ActionListener() {

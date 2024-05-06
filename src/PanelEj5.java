@@ -17,9 +17,10 @@ public class PanelEj5 extends JPanel {
      * Create the panel.
      */
     public PanelEj5() {
+        setBackground(new Color(204, 255, 255));
         setLayout(null);
         JLabel lblTitulo = new JLabel("Juego monedas");
-        lblTitulo.setBounds(0, 0, 1000, 31);
+        lblTitulo.setBounds(0, 0, 1000, 46);
         lblTitulo.setFont(new Font("Dialog", Font.BOLD, 20));
         lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitulo.setForeground(Color.BLACK);
@@ -29,7 +30,7 @@ public class PanelEj5 extends JPanel {
         setSize(1000, 670);
 
         JButton btnAtras = new JButton("<<Atrás");
-        btnAtras.setBounds(10, 25, 89, 23);
+        btnAtras.setBounds(10, 25, 89, 40);
         btnAtras.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 PanelPrincipal panerlprincipal = new PanelPrincipal();
@@ -44,11 +45,13 @@ public class PanelEj5 extends JPanel {
         add(btnAtras);
 
         JLabel lblSimulaciones = new JLabel("Número de simulaciones:");
-        lblSimulaciones.setBounds(24, 86, 134, 37);
+        lblSimulaciones.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblSimulaciones.setBounds(24, 114, 190, 30);
         add(lblSimulaciones);
 
         numSim = new JTextField();
-        numSim.setBounds(192, 89, 134, 31);
+        numSim.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        numSim.setBounds(201, 113, 178, 30);
         add(numSim);
         numSim.setColumns(10);
 
@@ -75,50 +78,63 @@ public class PanelEj5 extends JPanel {
         spResultadosSimulaciones.setViewportView(table);
 
         JLabel lblPromedios = new JLabel("Promedios de los resultados de las simulaciones");
-        lblPromedios.setFont(new Font("Tahoma", Font.BOLD, 11));
-        lblPromedios.setBounds(455, 439, 292, 14);
+        lblPromedios.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblPromedios.setBounds(455, 439, 447, 30);
         add(lblPromedios);
 
         JLabel lblParmetrosDeLa = new JLabel("Parámetros de la Simulación");
-        lblParmetrosDeLa.setFont(new Font("Tahoma", Font.BOLD, 11));
-        lblParmetrosDeLa.setBounds(24, 144, 190, 14);
+        lblParmetrosDeLa.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblParmetrosDeLa.setBounds(24, 155, 256, 40);
         add(lblParmetrosDeLa);
 
         JLabel lblNMT = new JLabel("Número máximo de tiros (NMT): ");
-        lblNMT.setBounds(24, 169, 180, 14);
+        lblNMT.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblNMT.setBounds(24, 206, 311, 14);
         add(lblNMT);
 
         tfNMT = new JTextField();
-        tfNMT.setBounds(224, 166, 112, 20);
+        tfNMT.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        tfNMT.setBounds(24, 231, 347, 30);
         add(tfNMT);
         tfNMT.setColumns(10);
 
         JLabel lblGUJ = new JLabel("Ganancia unitaria del jugador (GUJ): ");
-        lblGUJ.setBounds(24, 220, 200, 14);
+        lblGUJ.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblGUJ.setBounds(24, 280, 347, 30);
         add(lblGUJ);
 
         tfGUJ = new JTextField();
+        tfGUJ.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfGUJ.setColumns(10);
-        tfGUJ.setBounds(224, 217, 112, 20);
+        tfGUJ.setBounds(24, 310, 347, 30);
         add(tfGUJ);
 
         JLabel lblPrdidaUnitariaDel = new JLabel("Pérdida unitaria del jugador (PUJ): ");
-        lblPrdidaUnitariaDel.setBounds(24, 275, 200, 14);
+        lblPrdidaUnitariaDel.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblPrdidaUnitariaDel.setBounds(24, 351, 347, 30);
         add(lblPrdidaUnitariaDel);
 
         tfPUJ = new JTextField();
+        tfPUJ.setFont(new Font("Tahoma", Font.PLAIN, 14));
         tfPUJ.setColumns(10);
-        tfPUJ.setBounds(224, 272, 112, 20);
+        tfPUJ.setBounds(24, 380, 347, 30);
         add(tfPUJ);
 
         JLabel lblGJT = new JLabel("Ganancia del jugador total (GJT): ");
-        lblGJT.setBounds(455, 476, 190, 14);
+        lblGJT.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblGJT.setBounds(455, 480, 246, 30);
         add(lblGJT);
 
         tfGJT_promedio = new JTextField();
-        tfGJT_promedio.setBounds(661, 473, 125, 20);
+        tfGJT_promedio.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        tfGJT_promedio.setBounds(685, 480, 197, 30);
         add(tfGJT_promedio);
         tfGJT_promedio.setColumns(10);
+
+        JLabel lblBs = new JLabel("Bs.");
+        lblBs.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblBs.setBounds(892, 480, 78, 30);
+        add(lblBs);
 
         btnSimular.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
